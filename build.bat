@@ -6,8 +6,8 @@ MKDIR build
 SET DIR=%cd%
 
 FOR %%f IN (./src/*.rs) DO (
-	REM echo compiling %%f
-	REM rustc ./src/%%f
+	echo compiling %%f
+	rustc ./src/%%f
 )
 
 FOR %%f IN (./src/*.java) DO (
