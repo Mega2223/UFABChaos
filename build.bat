@@ -1,9 +1,8 @@
 @echo off
 
 DEL build /Q
-DEL bin /Q
 MKDIR build
-MKDIR bin
+
 SET DIR=%cd%
 
 FOR %%f IN (./src/*.rs) DO (
@@ -13,7 +12,11 @@ FOR %%f IN (./src/*.rs) DO (
 
 FOR %%f IN (./src/*.java) DO (
 	echo compiling %%f
-	javac -d bin ./src/%%f
-	cd DIR/bin
+	javac -d build ./src/%%f
+	cd ./build
 	jar --create --main-class VecProd --file %%f.jar *
+	cd ..
 )
+
+FOR %%f IN (./build/*.class) DO ( DEL build\%%f /Q )
+

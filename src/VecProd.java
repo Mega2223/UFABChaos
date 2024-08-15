@@ -1,5 +1,3 @@
-package bin;
-
 public class VecProd {
 	//Calculates the largest angle in radians between these 3 vectors
 	public static void main (String[] args){
