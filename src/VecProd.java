@@ -1,4 +1,6 @@
-public class Vprod {
+package bin;
+
+public class VecProd {
 	//Calculates the largest angle in radians between these 3 vectors
 	public static void main (String[] args){
 		double[] a = {1,-3,1};
