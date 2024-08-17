@@ -23,4 +23,3 @@ FOR %%f IN (./src/*.java) DO (
 )
 
 FOR %%f IN (./build/*.class) DO ( DEL build\%%f /Q )
-
