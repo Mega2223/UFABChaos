@@ -6,9 +6,13 @@ MKDIR build
 SET DIR=%cd%
 
 FOR %%f IN (./src/*.rs) DO (
+	cd ./build
 	echo compiling %%f
-	rustc ./src/%%f
+	rustc "%DIR%\src\%%f"
+	cd ..
 )
+
+FOR %%f IN (./build/*.pdb) DO ( DEL build\%%f /Q )
 
 FOR %%f IN (./src/*.java) DO (
 	echo compiling %%f
